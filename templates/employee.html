@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <style>
+        .header-container {
+            text-align: center; /* Center the content horizontally */
+            margin-top: 20px; /* Add margin to the top */
+            margin-bottom: 20px;
+            position: relative; /* Relative positioning for absolute positioning of link */
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input {
+            padding: 10px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .employee-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .employee-card {
+            flex: 0 0 calc(33.33% - 80px); /* Adjust the width as needed */
+            max-width: calc(33.33% - 50px);
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .employee-card:hover {
+            transform: scale(1.05);
+        }
+
+        .employee-card h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .employee-info {
+            margin-bottom: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            margin: 0 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .home-link {
+            position: absolute; /* Absolute positioning for top right */
+            top: 0;
+            left: 0;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+    <h1>Employee Information</h1>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchEmployees()" placeholder="Search for employees...">
+    </div>
+
+    <div class="button-container">
+        <button onclick="addEmployee()">Add Employee</button>
+        <button onclick="removeEmployee()">Remove Employee</button>
+    </div>
+
+    <div class="employee-container">
+
+        <!-- Employee cards go here -->
+        {% for employee in employee_data %}
+            <div class="employee-card" ">
+                <h2>Name : {{ employee[2] }}</h2>
+                <div class="employee-info"><strong>Employee ID:</strong> {{ employee[0] }}</div>
+                
+                <div class="employee-info"><strong>Address:</strong> {{ employee[3] }}</div>
+                <div class="employee-info"><strong>Phone Number:</strong> {{ employee[4] }}</div>
+                <div class="employee-info"><strong>Hire Date:</strong> {{ employee[5] }}</div>
+                <div class="employee-info"><strong>Position:</strong> {{ employee[6] }}</div>
+                <div class="employee-info"><strong>Salary:</strong> {{ employee[7] }}</div>
+                <div class="employee-info"><strong>Department:</strong> {{ employee[8] }}</div>
+                <div class="employee-info"><strong>Expected Salary Date:</strong> {{ employee[9] }}</div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #sidebar {
+            width: 200px;
+            height: 100%;
+            background-color: lightgreen;
+            color: #fff;
+            position: fixed;
+            transition: 0.5s;
+            overflow: auto;
+        }
+
+        #content {
+            margin-left: 200px;
+            padding: 20px;
+            transition: 0.5s;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .status-card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #sidebar h2 {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 0;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #sidebar li {
+            padding: 8px;
+            text-align: center;
+        }
+
+        #sidebar a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s;
+        }
+
+        #sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        #toggle-btn {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #toggle-btn:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="crops">Crops</a></li>
+            <li><a href="livestock">Livestock</a></li>
+            <li><a href="equipments">Equipments</a></li>
+            <li><a href="orders">Orders</a></li>
+            <li><a href="sales">Sales</a></li>
+            <li><a href="employees">Employees</a></li>
+            <li><a href="expenses">Expense</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div id="toggle-btn" onclick="toggleSidebar()">&#9776;</div>
+        <h1>Home Dashboard</h1>
+
+        <div class="status-card" id="crops">
+            <h2>Crops</h2>
+            <p>Current Crops: Wheat, Corn, Soybeans</p>
+            <p>Next Planting Season: Spring 2024</p>
+        </div>
+
+        <div class="status-card" id="livestock">
+            <h2>Livestock</h2>
+            <p>Total Livestock: 100 cattle, 50 sheep</p>
+            <p>Recent Vet Check: All animals passed health check</p>
+        </div>
+
+        <div class="status-card" id="equipments">
+            <h2>Equipments</h2>
+            <p>Total Tractors: 5</p>
+            <p>Total Harvesters: 3</p>
+            <p>Under Maintenance: 1</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            if (sidebar.style.width === "200px") {
+                sidebar.style.width = "0";
+                content.style.marginLeft = "0";
+            } else {
+                sidebar.style.width = "200px";
+                content.style.marginLeft = "200px";
+            }
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+            document.getElementById("content").style.marginLeft = "0";
+        }
+    </script>
+</body>
+</html>

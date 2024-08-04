@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestock Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .livestock-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .livestock-card {
+            flex: 0 0 calc(48% - 20px); /* Adjust the width as needed */
+            max-width: calc(48% - 20px);
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .livestock-card:hover {
+            transform: scale(1.05);
+        }
+
+        .livestock-card h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .livestock-info {
+            margin-bottom: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            margin: 0 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Livestock Information</h1>
+
+    <div class="button-container">
+        <button onclick="addLivestock()">Add livestock</button>
+        <button onclick="removeLivestock()">Remove livestock</button>
+    </div>
+
+    <div class="livestock-container">
+        {% for livestock in livestock_data %}
+            <!-- Livestock card template -->
+            <div class="livestock-card" >
+                <h2>{{ livestock[2] }}</h2>
+                <div class="livestock-info"><strong>Age:</strong> {{ livestock[3] }}</div>
+                <div class="livestock-info"><strong>Weight:</strong> {{ livestock[4] }}</div>
+                <div class="livestock-info"><strong>Health Status:</strong> {{ livestock[5] }}</div>
+            </div>
+        {% endfor %}
+    </div>
+       
+
+</body>
+</html>

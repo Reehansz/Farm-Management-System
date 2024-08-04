@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Livestock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ff4f50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="removeLivestockForm">
+        <h2>Remove Livestock</h2>
+        <label for="livestockID">Livestock ID:</label>
+        <input type="text" id="livestockID" name="livestockID" required>
+
+        <button type="button" onclick="removeLivestock()">Remove Livestock</button>
+    </form>
+
+    <script>
+        function removeLivestock() {
+            const livestockID = document.getElementById("livestockID").value;
+
+            // Assuming you have a function to send the data to the server to remove
+            // You need to replace the following line with actual logic
+            alert(`Removing livestock with ID: ${livestockID}`);
+
+            // Additional logic to send the form data to the server if needed
+            // ...
+
+            // Redirect to the Livestock Information page
+            window.location.href = "/livestock-information.html";
+        }
+    </script>
+
+</body>
+</html>

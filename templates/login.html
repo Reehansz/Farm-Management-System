@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USER LOGIN</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for message in messages %}
+          <div class="flash-{{ message[1] }}">{{ message[0] }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+</head>
+
+<body>
+<div class="form-container">
+  <h1>User Login Form</h1>
+
+  <a href="{{ url_for('signup') }}" class="signup-link">Sign Up</a>
+
+  <form action="{{ url_for('login') }}" method="post">
+    <div class="form-group">
+      <label for="role">Select Role:</label>
+      <select id="role" name="role" required>
+        <option value="farmers">Farmer</option>
+        <option value="employees">Employee</option>
+        <option value="customers">Customer</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone_number">Phone Number:</label>
+      <input type="tel" id="phone_number" name="phone_number" title="Please enter a valid 10-digit phone number">
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Login">
+    </div>
+  </form>
+</div>
+</body>
+</html>

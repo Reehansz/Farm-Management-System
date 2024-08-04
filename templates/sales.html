@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Information</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Crop Sales</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sale ID</th>
+                <th>Sale Date</th>
+                <th>Customer ID</th>
+                <th>Sale Amount</th>
+                <th>Sale Status</th>
+                <th>Crop ID</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale in crop_sales_data %}
+                <tr>
+                    <td>{{ sale[0] }}</td>
+                    <td>{{ sale[1] }}</td>
+                    <td>{{ sale[2] }}</td>
+                    <td>{{ sale[3] }}</td>
+                    <td>{{ sale[4] }}</td>
+                    <td>{{ sale[5] }}</td>
+                    <td>{{ sale[6] }}</td>
+                    <td>{{ sale[7] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Livestock Sales</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sale ID</th>
+                <th>Sale Date</th>
+                <th>Customer ID</th>
+                <th>Sale Amount</th>
+                <th>Sale Status</th>
+                <th>Livestock ID</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale in livestock_sales_data %}
+                <tr>
+                    <td>{{ sale[0] }}</td>
+                    <td>{{ sale[1] }}</td>
+                    <td>{{ sale[2] }}</td>
+                    <td>{{ sale[3] }}</td>
+                    <td>{{ sale[4] }}</td>
+                    <td>{{ sale[5] }}</td>
+                    <td>{{ sale[6] }}</td>
+                    <td>{{ sale[7] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

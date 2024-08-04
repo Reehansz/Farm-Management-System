@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Crop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="addCropForm" action="addCrop" method="post">
+        <h2>Add Crop</h2>
+        <label for="cropName">Crop Name:</label>
+        <input type="text" id="cropName" name="cropName" required>
+
+        <label for="plantedDate">Planted Date:</label>
+        <input type="date" id="plantedDate" name="plantedDate" required>
+
+        <label for="harvestingDate">Harvesting Date:</label>
+        <input type="date" id="harvestingDate" name="harvestingDate" required>
+
+        <label for="nextPlantingSeason">Expected Yield:</label>
+        <input type="text" id="nextPlantingSeason" name="expected_yield" required>
+
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script>
+        function addCrop() {
+            const cropName = document.getElementById("cropName").value;
+            const plantedDate = document.getElementById("plantedDate").value;
+            const harvestingDate = document.getElementById("harvestingDate").value;
+            const nextPlantingSeason = document.getElementById("nextPlantingSeason").value;
+
+            // Assuming you have a function to send the data to the server to add
+            // You need to replace the following line with actual logic
+            alert(`Adding crop - Crop Name: ${cropName}, Crop Type: ${cropType}, Planted Date: ${plantedDate}, Harvesting Date: ${harvestingDate}, Next Planting Season: ${nextPlantingSeason}`);
+
+            // Additional logic to send the form data to the server if needed
+            // ...
+        
+    
+    
+            // Redirect to the Add Crop page
+            window.location.href = "crops";
+        }
+    </script>
+
+</body>
+</html>

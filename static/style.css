@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+    background-image: url('../static/photoes/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff; /* Add background color to the form container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type=text], input[type=tel], select {
+    width: 100%;
+    padding: 8px; /* Adjusted padding for better input styling */
+    margin-bottom: 10px; /* Improved spacing between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Added border-radius for rounded corners */
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.flash-messages {
+    margin-top: 10px; /* Add space between form and flashed messages */
+}
+
+.flash-success {
+    color: #4CAF50;
+}
+
+.flash-error {
+    color: #FF0000;
+}
