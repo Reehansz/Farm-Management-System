@@ -48,7 +48,7 @@ def login():
 
 
 
-    return render_template('login.html')
+    return render_template('index.html')
 @app.route('/signup',methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
